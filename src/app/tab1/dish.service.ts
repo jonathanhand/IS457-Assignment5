@@ -74,8 +74,8 @@ export class DishService {
     return [...this._dishes];
   }
   constructor() { }
-  
-getDish(id: string) {
-  return {...this._dishes.find(p => p.id === id)};
-}
+
+  getDish(id: string) {
+    return {...this._dishes.find(p => p.id === id)};
+  }
 }

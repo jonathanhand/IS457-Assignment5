@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DishService } from './dish.service';
 import { Dish } from './dish.model';
+import { DishService } from './dish.service';
 
 @Component({
   selector: 'app-tab1',
@@ -12,5 +12,5 @@ export class Tab1Page implements OnInit {
   constructor (private dishService: DishService) {}
   ngOnInit () {
     this.loadedDishes = this.dishService.dishes;
-  }
+ }
 }

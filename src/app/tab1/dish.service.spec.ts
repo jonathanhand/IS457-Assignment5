@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { DishService } from './dish.service';
 
-describe('ItemService', () => {
+describe('DishService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {

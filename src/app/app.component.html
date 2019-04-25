@@ -1,28 +1,29 @@
 <ion-app>
-  <ion-menu side="start">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>
-          Jonathan Hand 016307185
-        </ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <ion-menu-toggle>
-          <ion-item lines="none" routerLink="/tabs/tab1">
-            <ion-icon name="md-restaurant" slot="start"></ion-icon>
-          <ion-label>View Menu</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-        <ion-menu-toggle>
-            <ion-item lines="none" routerLink="/ordering">
-              <ion-icon name="reorder" slot="start"></ion-icon>
-            <ion-label>Your Order</ion-label>
+    <ion-menu side="start">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>
+            Fisher Wu 018791615
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle>
+            <ion-item lines="none" routerLink="/tabs/tab1" >
+              <ion-icon name="restaurant" slot="start"></ion-icon>
+              <ion-label>View Menu</ion-label>
             </ion-item>
           </ion-menu-toggle>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-  <ion-router-outlet main></ion-router-outlet>
-</ion-app>
+          <ion-menu-toggle>
+            <ion-item lines="none" routerLink="/order">
+              <ion-icon name="reorder" slot="start"></ion-icon>
+              <ion-label>Your Order</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-app>
+  

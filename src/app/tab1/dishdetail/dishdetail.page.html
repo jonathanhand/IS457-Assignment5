@@ -1,41 +1,34 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
     </ion-buttons>
-    <ion-title>
-      {{item.title}}
-    </ion-title>
+    <ion-title>{{dish.item}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-    <ion-grid>
-      <ion-row>
-        <ion-col size-md="8" offset-md="2" text-center>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title> 
-                {{item.title}}
-              </ion-card-title>
-              <ion-card-subtitle>
-                {{item.price | currency}}
-              </ion-card-subtitle>
-            </ion-card-header>
-            <img src={{item.image}}>
-            <ion-card-content>
-              <p>{{item.description}}</p>
-            </ion-card-content>
-            <ion-button
-            fill="clear"
-            (click) = "onBookDish(true)"
-            [routerLink]="[
-            '/',
-            'dishdetail',
-            item.id]"
-            >ORDER</ion-button>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-content>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="8" offset-md="2" text-center>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              {{dish.item}}
+            </ion-card-title>
+            <ion-card-subtitle>
+                {{dish.price | currency}}
+            </ion-card-subtitle>
+          </ion-card-header>
+          <img src={{dish.image}}>
+          <ion-card-content>
+            <p>{{dish.desc}}</p>
+          </ion-card-content>
+          <ion-button fill="clear">
+            Order
+          </ion-button>          
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
