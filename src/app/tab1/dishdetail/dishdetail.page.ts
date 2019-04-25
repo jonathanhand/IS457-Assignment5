@@ -3,6 +3,7 @@ import { DishService } from '../dish.service';
 import { ActivatedRoute } from '@angular/router';
 import { Dish } from '../dish.model';
 
+
 @Component({
   selector: 'app-dishdetail',
   templateUrl: './dishdetail.page.html',
@@ -11,7 +12,8 @@ import { Dish } from '../dish.model';
 export class DishdetailPage implements OnInit {
   dish: Dish;
   id: string;
-  constructor(private route: ActivatedRoute,
+  constructor(
+    private route: ActivatedRoute,
     private dishSerive: DishService) { }
 
   ngOnInit() {

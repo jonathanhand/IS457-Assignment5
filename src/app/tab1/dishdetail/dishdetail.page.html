@@ -24,7 +24,9 @@
           <ion-card-content>
             <p>{{dish.desc}}</p>
           </ion-card-content>
-          <ion-button fill="clear">
+          <ion-button fill="clear"
+          [routerLink]="[
+          '/tabs/tab1']">
             Order
           </ion-button>          
         </ion-card>
