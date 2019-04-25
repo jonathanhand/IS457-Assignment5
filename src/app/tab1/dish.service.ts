@@ -5,6 +5,7 @@ import { Dish } from './dish.model';
   providedIn: 'root'
 })
 export class DishService {
+  private orderedDish: Dish[] = [];
   private _dishes: Dish[] = [
     new Dish(
       'd1',
@@ -77,5 +78,24 @@ export class DishService {
 
   getDish(id: string) {
     return {...this._dishes.find(p => p.id === id)};
+  }
+
+  addDish(dish: Dish) {
+    this.orderedDish.push (dish);
+    console.log(this.orderedDish);
+  }
+  removeDish(dish: Dish) {
+    const position = this.orderedDish.findIndex((dishEl: Dish) => {
+      return dishEl.id === dish.id;
+    });
+    this.orderedDish.splice(position, 1);
+  }
+  getOrderedDish() {
+    return this.orderedDish.slice();
+  }
+  isDishOrdered(dish: Dish) {
+    return this.orderedDish.find((dishE1: Dish) => {
+      return dishE1.id === dish.id;
+    });
   }
 }

@@ -14,11 +14,14 @@ export class DishdetailPage implements OnInit {
   id: string;
   constructor(
     private route: ActivatedRoute,
-    private dishSerive: DishService) { }
+    private dishService: DishService) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('dishId');
-    this.dish = this.dishSerive.getDish(this.id);
+    this.dish = this.dishService.getDish(this.id);
+  }
+  orderDish() {
+    this.dishService.addDish(this.dishService.getDish(this.route.snapshot.paramMap.get('dishId')));
   }
 
 }

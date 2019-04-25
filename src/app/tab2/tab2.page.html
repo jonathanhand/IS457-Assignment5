@@ -10,12 +10,13 @@
   </ion-header>
   
   <ion-content>
+    <h2>Ordered Dishes</h2>
     <ion-grid>
       <ion-row>
         <ion-col size-md="8" offset-md="2" text-center>
           <ion-list>
             <ion-item 
-            *ngFor="let dish of loadedDishes"
+            *ngFor="let dish of dish"
             [routerLink]="[
             '/',
             'create-order',
@@ -34,5 +35,18 @@
         </ion-col>
       </ion-row>
     </ion-grid>
+    <h3>Delivery Information</h3>
+    <ion-item>
+      <ion-label position="floating">Your Name</ion-label>
+      <ion-input type = "text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Your Address</ion-label>
+      <ion-input type = "text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Your Phone Number</ion-label>
+      <ion-input type = "text"></ion-input>
+    </ion-item>
   </ion-content>
   
