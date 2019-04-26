@@ -9,11 +9,11 @@
     </ion-toolbar>
   </ion-header>
   
-  <ion-content>
+  <ion-content padding>
       <h2>Ordered Dishes</h2>
       <ion-grid>
           <ion-row>
-            <ion-col size-md="8" offset-md="2" text-center>
+            <ion-col>
               <ion-list>
                 <ion-item 
                 *ngFor="let dish of dish">
@@ -26,27 +26,27 @@
             </ion-col>
           </ion-row>
     </ion-grid>
-      <h3>Delivery Information</h3>
+      <h2>Delivery Information</h2>
       <ion-item>
         <ion-label position="floating">Your Name</ion-label>
-        <ion-input type = "text"></ion-input>
+        <ion-input id='name' type = "text"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Your Address</ion-label>
-        <ion-textarea></ion-textarea>
+        <ion-textarea id='address'></ion-textarea>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Your Phone Number</ion-label>
-        <ion-input type = "text"></ion-input>
+        <ion-input id='phone' type = "text"></ion-input>
       </ion-item>
       <ion-item>
 
           <ion-label position="floating">Delivery Date</ion-label>
-          <ion-datetime placeholder="xxx-xx-xx" displayFormat="YYYY-MM-DD" min="2019-04-25" max = "2020" picker-format="YYYY-MM-DD">
+          <ion-datetime id='date' placeholder="xxx-xx-xx" displayFormat="YYYY-MM-DD" min="2019-04-25" max = "2020" picker-format="YYYY-MM-DD">
           </ion-datetime>
    <ion-item>
               <ion-label position="floating">Time</ion-label>
-              <ion-select >
+              <ion-select id='time'>
                 <ion-select-option value="500">5:00pm</ion-select-option>
                 <ion-select-option value="530">5:30pm</ion-select-option>
                 <ion-select-option value="600">6:00pm</ion-select-option>
@@ -58,6 +58,6 @@
               </ion-select>
 </ion-item>
         </ion-item>
-        <ion-button (click)="onOrderDish()">Submit Your Order</ion-button>
+        <ion-button expand="block" (click)="submitOrder()">Submit Your Order</ion-button>
   </ion-content>
   

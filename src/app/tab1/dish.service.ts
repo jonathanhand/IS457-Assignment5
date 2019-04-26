@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Dish } from './dish.model';
+import { Order } from '../tab2/create-order/order.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DishService {
   private orderedDish: Dish[] = [];
+  private order: Order[];
   private _dishes: Dish[] = [
     new Dish(
       'd1',
@@ -93,6 +95,7 @@ export class DishService {
   getOrderedDish() {
     return this.orderedDish.slice();
   }
+
   isDishOrdered(dish: Dish) {
     return this.orderedDish.find((dishE1: Dish) => {
       return dishE1.id === dish.id;

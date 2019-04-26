@@ -3,6 +3,7 @@ import { DishService } from '../../tab1/dish.service';
 import { ActivatedRoute } from '@angular/router';
 import { Dish } from '../../tab1/dish.model';
 import { ModalController } from '@ionic/angular';
+import { Order } from './order.model';
 
 @Component({
   selector: 'app-create-order',
@@ -12,6 +13,8 @@ import { ModalController } from '@ionic/angular';
 export class CreateOrderPage {
   @Input() selectedDish: Dish;
   dish: Dish[];
+  delivery: [];
+  order: Order[];
 
   constructor(private route: ActivatedRoute,
     private dishService: DishService,
@@ -21,7 +24,7 @@ export class CreateOrderPage {
     }
     onOrderDish() {
       this.modalCtrl.dismiss(null, 'confirm');
-      
+
     }
   isFavorite(dish: Dish) {
     return this.dishService.isDishOrdered(dish);
@@ -29,5 +32,6 @@ export class CreateOrderPage {
   ionViewWillEnter() {
     this.dish = this.dishService.getOrderedDish();
   }
-
+  submitOrder() {
+  }
 }

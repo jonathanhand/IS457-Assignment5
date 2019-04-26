@@ -9,20 +9,22 @@
     </ion-toolbar>
   </ion-header>
   
-  <ion-content>
+  <ion-content padding>
       <ion-grid>
           <ion-row>
-            <ion-col size-md="8" offset-md="2" text-center>
+            <ion-col>
               <ion-list>
-                <ion-item-sliding
+                <ion-item-sliding 
                 *ngFor="let dish of dish">
+                <ion-item>
                   <ion-thumbnail slot="start">
                     <img src= {{dish.image}}>
                   </ion-thumbnail>
                   <ion-label>
                     <h2>{{dish.item}}</h2>
-                    <p>{{dish.price}}</p>
+                    <p>{{dish.price | currency}}</p>
                   </ion-label>
+                  </ion-item>
                   <ion-item-options>
                     <ion-item-option
                     
@@ -38,6 +40,6 @@
             </ion-col>
           </ion-row>
     </ion-grid>
-    <ion-button (click)="onOrderDish()">Place Order</ion-button>
+    <ion-button expand="block" (click)="onOrderDish()">Place Order</ion-button>
   </ion-content>
   
