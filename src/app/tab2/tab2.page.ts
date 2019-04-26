@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Dish } from '../tab1/dish.model';
 import { DishService } from '../tab1/dish.service';
+import { ModalController } from '@ionic/angular';
+import { CreateOrderPage } from './create-order/create-order.page';
 
 @Component({
   selector: 'app-tab2',
@@ -10,7 +12,8 @@ import { DishService } from '../tab1/dish.service';
 export class Tab2Page {
   dish: Dish[];
   constructor (
-    private dishService: DishService) {}
+    private dishService: DishService,
+    private modalCtrl: ModalController) {}
   ionViewWillEnter() {
     this.dish = this.dishService.getOrderedDish();
   }
@@ -21,5 +24,14 @@ export class Tab2Page {
   }
   isFavorite(dish: Dish) {
     return this.dishService.isDishOrdered(dish);
+  }
+  deliveryInfo() {
+  }
+  async onOrderDish() {
+    const modal = await this.modalCtrl.create({
+      component: CreateOrderPage,
+      componentProps: {selectedDish: this.dish}
+    });
+    await modal.present();
   }
 }

@@ -9,11 +9,7 @@ import { CreateOrderPage } from './create-order.page';
 
 const routes: Routes = [
   {
-    path: 'createorder',
-    component: CreateOrderPage
-  },
-  {
-    path: ':dishId',
+    path: 'create-order',
     component: CreateOrderPage
   }
 ];

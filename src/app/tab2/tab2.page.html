@@ -10,43 +10,24 @@
   </ion-header>
   
   <ion-content>
-    <h2>Ordered Dishes</h2>
-    <ion-grid>
-      <ion-row>
-        <ion-col size-md="8" offset-md="2" text-center>
-          <ion-list>
-            <ion-item 
-            *ngFor="let dish of dish"
-            [routerLink]="[
-            '/',
-            'create-order',
-            dish.id
-            ]"
-            detail>
-              <ion-thumbnail slot="start">
-                <img src= {{dish.image}}>
-              </ion-thumbnail>
-              <ion-label>
-                <h2>{{dish.item}}</h2>
-                <p>{{dish.desc}}</p>
-              </ion-label>
-            </ion-item>
-          </ion-list>
-        </ion-col>
-      </ion-row>
+      <ion-grid>
+          <ion-row>
+            <ion-col size-md="8" offset-md="2" text-center>
+              <ion-list>
+                <ion-item 
+                *ngFor="let dish of dish">
+                  <ion-thumbnail slot="start">
+                    <img src= {{dish.image}}>
+                  </ion-thumbnail>
+                  <ion-label>
+                    <h2>{{dish.item}}</h2>
+                    <p>{{dish.desc}}</p>
+                  </ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
     </ion-grid>
-    <h3>Delivery Information</h3>
-    <ion-item>
-      <ion-label position="floating">Your Name</ion-label>
-      <ion-input type = "text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Your Address</ion-label>
-      <ion-input type = "text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Your Phone Number</ion-label>
-      <ion-input type = "text"></ion-input>
-    </ion-item>
+    <ion-button (click)="onOrderDish()">Place Order</ion-button>
   </ion-content>
   

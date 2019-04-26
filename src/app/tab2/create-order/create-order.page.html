@@ -1,35 +1,52 @@
 <ion-header>
     <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+      <ion-buttons slot="primary">
+        <ion-button (click)="onCancel()">
+          <ion-icon name="close"></ion-icon>
+        </ion-button>
       </ion-buttons>
       <ion-title>Delivery Information</ion-title>
     </ion-toolbar>
   </ion-header>
   
   <ion-content>
-    <ion-grid>
-      <ion-row>
-        <ion-col size-md="8" offset-md="2" text-center>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>
-                {{dish.item}}
-              </ion-card-title>
-              <ion-card-subtitle>
-                  {{dish.price | currency}}
-              </ion-card-subtitle>
-            </ion-card-header>
-            <img src={{dish.image}}>
-            <ion-card-content>
-              <p>{{dish.desc}}</p>
-            </ion-card-content>
-            <ion-button fill="clear">
-              Order
-            </ion-button>          
-          </ion-card>
-        </ion-col>
-      </ion-row>
+      <h2>Ordered Dishes</h2>
+      <ion-grid>
+          <ion-row>
+            <ion-col size-md="8" offset-md="2" text-center>
+              <ion-list>
+                <ion-item 
+                *ngFor="let dish of dish">
+                  <ion-label>
+                    <h2>{{dish.item}} {{dish.price}}</h2>
+                  
+                  </ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
     </ion-grid>
+      <h3>Delivery Information</h3>
+      <ion-item>
+        <ion-label position="floating">Your Name</ion-label>
+        <ion-input type = "text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Your Address</ion-label>
+        <ion-input type = "ion-textarea"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Your Phone Number</ion-label>
+        <ion-input type = "text"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Your Phone Number</ion-label>
+          <ion-input type = "ion-datetime"></ion-input>
+   
+              <ion-label position="floating">Your Phone Number</ion-label>
+              <ion-input type = "ion-select"></ion-input>
+
+        </ion-item>
+        <ion-button (click)="onOrderDish()">Submit Your Order</ion-button>
   </ion-content>
   
