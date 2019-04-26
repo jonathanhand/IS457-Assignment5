@@ -15,7 +15,8 @@
             <ion-col>
               <ion-list>
                 <ion-item-sliding 
-                *ngFor="let dish of dish">
+                *ngFor="let dish of dish"
+                #slidingBooking>
                 <ion-item>
                   <ion-thumbnail slot="start">
                     <img src= {{dish.image}}>

@@ -3,7 +3,7 @@ import { Dish } from '../tab1/dish.model';
 import { DishService } from '../tab1/dish.service';
 import { ModalController } from '@ionic/angular';
 import { CreateOrderPage } from './create-order/create-order.page';
-
+import { IonItemSliding } from '@ionic/angular';
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -17,9 +17,10 @@ export class Tab2Page {
   ionViewWillEnter() {
     this.dish = this.dishService.getOrderedDish();
   }
-  onRemoveFromFavorites(dish: Dish) {
+  onRemoveFromFavorites(dish: Dish, slidingE1: IonItemSliding) {
     this.dishService.removeDish(dish);
     this.dish = this.dishService.getOrderedDish();
+    slidingE1.close();
 
   }
   isFavorite(dish: Dish) {
