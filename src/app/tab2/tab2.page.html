@@ -14,16 +14,26 @@
           <ion-row>
             <ion-col size-md="8" offset-md="2" text-center>
               <ion-list>
-                <ion-item 
+                <ion-item-sliding
                 *ngFor="let dish of dish">
                   <ion-thumbnail slot="start">
                     <img src= {{dish.image}}>
                   </ion-thumbnail>
                   <ion-label>
                     <h2>{{dish.item}}</h2>
-                    <p>{{dish.desc}}</p>
+                    <p>{{dish.price}}</p>
                   </ion-label>
-                </ion-item>
+                  <ion-item-options>
+                    <ion-item-option
+                    
+                      (click)="onRemoveFromFavorites(dish)"
+                      color="danger">
+                      <ion-icon name = "trash"></ion-icon>
+                      Remove
+                    </ion-item-option>
+            
+                  </ion-item-options>
+                </ion-item-sliding>
               </ion-list>
             </ion-col>
           </ion-row>

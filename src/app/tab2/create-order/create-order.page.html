@@ -33,19 +33,30 @@
       </ion-item>
       <ion-item>
         <ion-label position="floating">Your Address</ion-label>
-        <ion-input type = "ion-textarea"></ion-input>
+        <ion-textarea></ion-textarea>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Your Phone Number</ion-label>
         <ion-input type = "text"></ion-input>
       </ion-item>
       <ion-item>
-          <ion-label position="floating">Your Phone Number</ion-label>
-          <ion-input type = "ion-datetime"></ion-input>
-   
-              <ion-label position="floating">Your Phone Number</ion-label>
-              <ion-input type = "ion-select"></ion-input>
 
+          <ion-label position="floating">Delivery Date</ion-label>
+          <ion-datetime placeholder="xxx-xx-xx" displayFormat="YYYY-MM-DD" min="2019-04-25" max = "2020" picker-format="YYYY-MM-DD">
+          </ion-datetime>
+   <ion-item>
+              <ion-label position="floating">Time</ion-label>
+              <ion-select >
+                <ion-select-option value="500">5:00pm</ion-select-option>
+                <ion-select-option value="530">5:30pm</ion-select-option>
+                <ion-select-option value="600">6:00pm</ion-select-option>
+                <ion-select-option value="630">6:30pm</ion-select-option>
+                <ion-select-option value="700">7:00pm</ion-select-option>
+                <ion-select-option value="730">7:30pm</ion-select-option>
+                <ion-select-option value="800">8:00pm</ion-select-option>
+                <ion-select-option value="830">8:30pm</ion-select-option>
+              </ion-select>
+</ion-item>
         </ion-item>
         <ion-button (click)="onOrderDish()">Submit Your Order</ion-button>
   </ion-content>

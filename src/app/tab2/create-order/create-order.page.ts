@@ -21,6 +21,7 @@ export class CreateOrderPage {
     }
     onOrderDish() {
       this.modalCtrl.dismiss(null, 'confirm');
+      
     }
   isFavorite(dish: Dish) {
     return this.dishService.isDishOrdered(dish);
